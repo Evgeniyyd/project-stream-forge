@@ -27,7 +27,10 @@ public class WldCode0003 extends Base {
      * @return список названий стран, отсортированный по алфавиту
      */
     public List<String> task(@NonNull Collection<Country> countries) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+     return   countries.stream()
+               .map(Country::getName)
+               .sorted()
+               .toList();
     }
 
     @Test

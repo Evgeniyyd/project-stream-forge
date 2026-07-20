@@ -26,7 +26,10 @@ public class WldCode0001 extends Base {
      * @return список стран с населением > 50 000 000
      */
     public List<Country> task(@NonNull Collection<Country> countries) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+        long target = 50_000_000L;
+     return   countries.parallelStream()
+               .filter(countr -> countr.getPopulation() > target)
+               .toList();
     }
 
     @Test
