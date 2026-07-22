@@ -26,7 +26,9 @@ public class WldCode0006 extends Base {
      * или {@code Optional.empty()}, если список стран пуст
      */
     public Optional<Country> task(@NonNull Collection<Country> countries) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+
+       return countries.stream()
+               .max((countrie1,countries2) -> Double.compare(countrie1.getSurfaceArea(),countries2.getSurfaceArea()));
     }
 
     @Test
