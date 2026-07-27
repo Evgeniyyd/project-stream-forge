@@ -33,8 +33,7 @@ public class MovCode0014 extends Base {
      */
     public List<Movie> task(@NonNull Collection<Movie> movies, @NonNull String genreName) {
       return movies.stream()
-              .filter(movie -> movie.getGenres().toString().contains(genreName))
-              .toList();
+
 
 
     }
