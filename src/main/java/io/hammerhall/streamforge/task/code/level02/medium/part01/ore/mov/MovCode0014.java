@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -32,8 +33,10 @@ public class MovCode0014 extends Base {
      * @return список фильмов указанного жанра
      */
     public List<Movie> task(@NonNull Collection<Movie> movies, @NonNull String genreName) {
-      return movies.stream()
-
+        return movies.stream()
+                .filter(movie -> movie.getGenres().stream()
+                        .anyMatch(genre -> genreName.equals(genre.getName())))
+                .toList();
 
 
     }
