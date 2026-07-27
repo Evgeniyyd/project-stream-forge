@@ -3,9 +3,13 @@ package io.hammerhall.streamforge.task.code.level02.medium.part01.ore.mov;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import io.hammerhall.streamforge.domain.movie.Genre;
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,7 +29,11 @@ public class MovCode0013 extends Base {
      * @return true, если в базе есть хотя бы один фильм указанного жанра, иначе false
      */
     public boolean task(@NonNull Collection<Movie> movies, @NonNull String genreName) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+        return movies.stream()
+                .map(Movie::getGenres)
+                .flatMap(genres -> genres.stream())
+                .map(Genre::getName)
+                .anyMatch(genre -> genre.equals(genreName));
     }
 
     @Test

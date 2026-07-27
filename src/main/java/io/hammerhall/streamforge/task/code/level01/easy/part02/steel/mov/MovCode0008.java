@@ -26,7 +26,10 @@ public class MovCode0008 extends Base {
      * @return список фильмов, у которых строго больше одного режиссёра
      */
     public List<Movie> task(@NonNull Collection<Movie> movies) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+       int count =1;
+       return movies.stream()
+               .filter(movie -> movie.getDirectors().size() > count)
+               .toList();
     }
 
     @Test
