@@ -7,9 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import io.hammerhall.streamforge.domain.world.Country;
 import io.hammerhall.streamforge.task.Base;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.IntStream;
+
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,7 +33,9 @@ public class WldCode0011 extends Base {
      * в порядке убывания
      */
     public List<Country> task(@NonNull Collection<Country> countries) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+        return countries.stream()
+                .sorted((country1, country2) -> country2.getCities().size() - country1.getCities().size())
+                .toList();
     }
 
     @Test
