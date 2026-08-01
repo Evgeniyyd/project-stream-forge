@@ -4,10 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import io.hammerhall.streamforge.domain.movie.Director;
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import lombok.NonNull;
 import org.junit.jupiter.api.Assertions;
@@ -37,7 +39,26 @@ public class MovCode0018 extends Base {
      * @return список последних N уникальных имён режиссёров в алфавитном порядке
      */
     public List<String> task(@NonNull Collection<Movie> movies, int limit) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+     return  movies.stream()
+             .map(movie -> movie.getDirectors())
+             .flatMap(directors -> directors.stream())
+             .map(Director::getFullName)
+             .distinct()
+             .sorted()
+             .collect(Collectors.toList())
+             .stream()
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     @Test
