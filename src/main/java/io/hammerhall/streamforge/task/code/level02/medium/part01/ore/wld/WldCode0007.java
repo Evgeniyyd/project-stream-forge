@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import io.hammerhall.streamforge.domain.world.Country;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
@@ -28,7 +29,9 @@ public class WldCode0007 extends Base {
      * @return неизменяемый список стран, отсортированных по населению по убыванию
      */
     public List<Country> task(@NonNull Collection<Country> countries) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+     return countries.stream()
+             .sorted((country1, country2) -> country2.getPopulation() - country1.getPopulation())
+             .toList();
     }
 
     @Test

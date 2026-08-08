@@ -32,7 +32,12 @@ public class MovCode0019 extends Base {
      * @return список всех режиссёров в порядке появления
      */
     public List<Director> task(@NonNull Collection<Movie> movies) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+     return   movies.stream()
+             .<Director>mapMulti((movie, directors) -> {
+         for (Director direct : movie.getDirectors()){
+             directors.accept(direct);
+         }
+        }).toList();
     }
 
     @Test

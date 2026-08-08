@@ -8,6 +8,8 @@ import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
+
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,7 +31,10 @@ public class MovCode0003 extends Base {
      * если limit больше размера коллекции
      */
     public List<Movie> task(@NonNull Collection<Movie> movies, int limit) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+        int abs = Math.max(0, limit);
+        return movies.stream()
+          .limit(abs)
+          .toList();
     }
 
     @Test

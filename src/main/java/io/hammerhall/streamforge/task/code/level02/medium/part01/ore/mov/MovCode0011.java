@@ -29,7 +29,9 @@ public class MovCode0011 extends Base {
      * если коллекция пуста
      */
     public Optional<Movie> task(@NonNull Collection<Movie> movies) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+       return movies.stream()
+               .min((movie1,movie2) -> Double.compare(movie1.getYear(),movie2.getYear()));
+
     }
 
     @Test

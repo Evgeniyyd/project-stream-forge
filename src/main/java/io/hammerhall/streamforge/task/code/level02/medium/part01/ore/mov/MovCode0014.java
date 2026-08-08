@@ -6,8 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
+
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,7 +33,12 @@ public class MovCode0014 extends Base {
      * @return список фильмов указанного жанра
      */
     public List<Movie> task(@NonNull Collection<Movie> movies, @NonNull String genreName) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+        return movies.stream()
+                .filter(movie -> movie.getGenres().stream()
+                        .anyMatch(genre -> genreName.equals(genre.getName())))
+                .toList();
+
+
     }
 
     @Test

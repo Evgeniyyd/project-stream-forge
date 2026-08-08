@@ -25,7 +25,11 @@ public class WldCode0009 extends Base {
      * для пустого списка стран — 0
      */
     public long task(@NonNull Collection<Country> countries) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+     return   countries.stream()
+               .flatMap(country -> country.getCities().stream())
+               .mapToLong(city -> city.getPopulation())
+               .sum();
+
     }
 
     @Test

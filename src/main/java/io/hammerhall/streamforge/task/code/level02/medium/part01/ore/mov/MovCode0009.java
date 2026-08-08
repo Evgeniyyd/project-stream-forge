@@ -29,7 +29,9 @@ public class MovCode0009 extends Base {
      * @return список фильмов, отсортированных по году выхода по возрастанию
      */
     public List<Movie> task(@NonNull Collection<Movie> movies) {
-        throw new UnsupportedOperationException("Реализуйте метод");
+    return  movies.stream()
+            .sorted((movie1,movie2) -> movie1.getYear() - movie2.getYear())
+            .toList();
     }
 
     @Test
