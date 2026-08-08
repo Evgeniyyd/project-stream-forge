@@ -33,10 +33,11 @@ public class MovCode0019 extends Base {
      */
     public List<Director> task(@NonNull Collection<Movie> movies) {
      return   movies.stream()
-             .<Director>mapMulti((movie, directors) -> {
-         for (Director direct : movie.getDirectors()){
-             directors.accept(direct);
-         }
+             .<Director>mapMulti((movie, consumer) -> {
+                 movie.getDirectors().forEach(consumer);
+//         for (Director direct : movie.getDirectors()){
+//             directors.accept(direct);
+//         }
         }).toList();
     }
 
