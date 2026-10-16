@@ -1,12 +1,8 @@
 package io.hammerhall.streamforge.task.code.level01.easy.part02.steel.mov;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
-import java.util.List;
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -30,14 +26,10 @@ public class MovCode0004 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovCode0004");
+
         Collection<Movie> movies = movies();
 
-        long nonLeapYearMoviesCount = task(movies);
-
-        assertTrue(nonLeapYearMoviesCount > 0);
-        assertTrue(nonLeapYearMoviesCount <= movies.size());
-        assertEquals(0L, task(List.of()));
-
-        System.out.println(nonLeapYearMoviesCount);
+        IO.println(task(movies));
     }
 }

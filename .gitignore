@@ -77,3 +77,7 @@ replay_pid*
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Python: кеш байткода. exam-release.py грузит стриппер модулем,
+# и Python кладёт рядом scripts/__pycache__/ — не исходник.
+__pycache__/

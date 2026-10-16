@@ -1,0 +1,45 @@
+package io.hammerhall.streamforge.task.mind.level05.ignition.part01.ore.mov;
+
+import io.hammerhall.streamforge.domain.movie.Movie;
+import io.hammerhall.streamforge.task.Base;
+import java.util.Collection;
+import java.util.List;
+import lombok.NonNull;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+@DisplayName("Задание: Получить «временной срез» базы — N самых ранних и N самых поздних фильмов.")
+public class MovMind0022 extends Base {
+
+    /**
+     * Задание: Получить «временной срез» базы — N самых ранних и N самых поздних фильмов.
+     * <p>
+     * Описание: фильмы упорядочиваются по году выхода. Из полученной последовательности
+     * формируется результат: сначала идут N самых ранних фильмов в порядке возрастания
+     * года, затем — N самых поздних фильмов в порядке убывания года (от новейшего к
+     * старому).
+     * <p>
+     * Каждая часть содержит {@code limit} фильмов, а если фильмов меньше — все фильмы
+     * коллекции. Если фильмов меньше, чем {@code 2 * limit}, один и тот же фильм может попасть
+     * в обе части результата. Если коллекция пуста или {@code limit} не положителен —
+     * возвращается пустой список.
+     *
+     * @param movies коллекция фильмов
+     * @param limit  количество фильмов с каждого «края» хронологии
+     * @return список из самых ранних (по возрастанию) и самых поздних (по убыванию) фильмов
+     */
+    public List<Movie> task(@NonNull Collection<Movie> movies, int limit) {
+        throw new UnsupportedOperationException("Реализуйте метод");
+    }
+
+    @Test
+    void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovMind0022");
+
+        Collection<Movie> movies = movies();
+
+        int limit = 3;
+
+        task(movies, limit).stream().limit(20).forEach(IO::println);
+    }
+}

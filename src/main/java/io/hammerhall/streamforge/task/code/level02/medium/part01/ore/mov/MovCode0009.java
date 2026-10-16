@@ -1,16 +1,10 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part01.ore.mov;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.IntStream;
 import lombok.NonNull;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,17 +28,10 @@ public class MovCode0009 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovCode0009");
+
         Collection<Movie> movies = movies();
-        List<Movie> list = movies.stream().toList().subList(0, 1000);
-        List<Movie> moviesSortedByYear = task(list);
 
-        assertNotNull(moviesSortedByYear);
-        assertEquals(list.size(), moviesSortedByYear.size());
-        assertTrue(moviesSortedByYear.containsAll(list));
-        IntStream.range(1, moviesSortedByYear.size())
-                .mapToObj(i -> moviesSortedByYear.get(i - 1).getYear() <= moviesSortedByYear.get(i).getYear())
-                .forEach(Assertions::assertTrue);
-
-        moviesSortedByYear.forEach(System.out::println);
+        task(movies).stream().limit(20).forEach(IO::println);
     }
 }

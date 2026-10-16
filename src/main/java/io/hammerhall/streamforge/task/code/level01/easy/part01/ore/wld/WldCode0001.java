@@ -1,9 +1,5 @@
 package io.hammerhall.streamforge.task.code.level01.easy.part01.ore.wld;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.world.Country;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -31,14 +27,11 @@ public class WldCode0001 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit WldCode0001");
+
         Collection<Country> countries = countries();
-        List<Country> largeCountries = task(countries);
 
-        assertNotNull(largeCountries);
-        assertFalse(largeCountries.isEmpty());
-
-        assertTrue(task(List.of()).isEmpty());
-
-        largeCountries.forEach(country -> System.out.printf("%s — %d%n", country.getName(), country.getPopulation()));
+        task(countries).forEach(country ->
+                IO.println("%s — %d".formatted(country.getName(), country.getPopulation())));
     }
 }

@@ -1,16 +1,10 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part02.anvil.mov;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.IntStream;
 import lombok.NonNull;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -42,24 +36,12 @@ public class MovCode0018 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovCode0018");
+
         Collection<Movie> movies = movies();
 
         int limit = 10;
 
-        List<String> lastUniqueDirectorNames = task(movies, limit);
-
-        assertNotNull(lastUniqueDirectorNames);
-        assertFalse(lastUniqueDirectorNames.isEmpty());
-        assertTrue(lastUniqueDirectorNames.size() <= limit);
-        assertTrue(lastUniqueDirectorNames.stream()
-                .allMatch(name -> name != null && !name.isBlank()));
-
-        IntStream.range(1, lastUniqueDirectorNames.size())
-                .mapToObj(i -> lastUniqueDirectorNames.get(i - 1).compareTo(lastUniqueDirectorNames.get(i)) <= 0)
-                .forEach(Assertions::assertTrue);
-
-        assertTrue(task(movies, -1).isEmpty());
-
-        lastUniqueDirectorNames.forEach(System.out::println);
+        task(movies, limit).stream().limit(20).forEach(IO::println);
     }
 }

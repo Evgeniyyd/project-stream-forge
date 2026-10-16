@@ -1,9 +1,5 @@
 package io.hammerhall.streamforge.task.mind.level04.collapse.part02.ingot.mov;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -22,6 +18,8 @@ public class MovMind0006 extends Base {
      * состоит ровно из двух значений: "Drama" и "Comedy". Фильм попадает в результат
      * только при полном совпадении наборов — ни больше, ни меньше.
      * Например, фильм с жанрами Drama, Comedy и Romance не подходит.
+     * Названия жанров сравниваются с учётом регистра. Порядок фильмов в результате
+     * соответствует порядку обхода исходной коллекции.
      *
      * @param movies коллекция фильмов
      * @return список фильмов, у которых набор жанров строго равен {"Drama", "Comedy"}
@@ -32,15 +30,10 @@ public class MovMind0006 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovMind0006");
+
         Collection<Movie> movies = movies();
 
-        List<Movie> dramaComedyMovies = task(movies);
-
-        assertNotNull(dramaComedyMovies);
-        assertFalse(dramaComedyMovies.isEmpty());
-        assertTrue(dramaComedyMovies.stream()
-                .noneMatch(movie -> movie.getGenres().size() > 2));
-
-        dramaComedyMovies.forEach(movie -> System.out.println(movie.getTitle() + " " + movie.getGenres()));
+        task(movies).stream().limit(20).forEach(IO::println);
     }
 }

@@ -1,8 +1,5 @@
 package io.hammerhall.streamforge.task.code.level01.easy.part02.steel.mov;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -31,13 +28,10 @@ public class MovCode0007 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovCode0007");
+
         Collection<Movie> movies = movies();
 
-        List<Movie> moviesWithMultipleGenres = task(movies);
-
-        assertNotNull(moviesWithMultipleGenres);
-        assertFalse(moviesWithMultipleGenres.isEmpty());
-
-        moviesWithMultipleGenres.stream().limit(20).forEach(System.out::println);
+        task(movies).stream().limit(20).forEach(IO::println);
     }
 }

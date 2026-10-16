@@ -1,9 +1,5 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part03.steel.wld;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.world.Country;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -37,27 +33,10 @@ public class WldCode0038 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit WldCode0038");
+
         Collection<Country> countries = countries();
-        Map<String, List<Country>> result = task(countries);
 
-        assertNotNull(result);
-        assertFalse(result.isEmpty());
-
-        // ключи — непустые названия континентов
-        assertTrue(result.keySet().stream()
-                .allMatch(continent -> continent != null && !continent.isBlank()));
-
-        // граница: страна с населением ровно 50 млн НЕ попадает (строго больше)
-        Country edge = new Country();
-        edge.setContinent("Test");
-        edge.setPopulation(50_000_000);
-        edge.setCities(List.of());
-        Map<String, List<Country>> edgeResult = task(List.of(edge));
-        assertTrue(edgeResult.containsKey("Test"));
-        assertTrue(edgeResult.get("Test").isEmpty());
-
-        result.forEach((continent, filteredCountries) ->
-                System.out.printf("%s -> %d стран(ы)%n",
-                        continent, filteredCountries.size()));
+        task(countries).entrySet().stream().limit(20).forEach(IO::println);
     }
 }

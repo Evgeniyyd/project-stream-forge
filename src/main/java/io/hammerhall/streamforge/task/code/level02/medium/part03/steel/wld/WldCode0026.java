@@ -1,15 +1,10 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part03.steel.wld;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.world.City;
 import io.hammerhall.streamforge.domain.world.Country;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -37,22 +32,10 @@ public class WldCode0026 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit WldCode0026");
+
         Collection<Country> countries = countries();
 
-        List<City> capitals = task(countries);
-
-        assertNotNull(capitals);
-        assertFalse(capitals.isEmpty());
-        assertTrue(capitals.size() <= countries.size());
-        assertTrue(capitals.stream().allMatch(Objects::nonNull));
-
-        assertTrue(task(List.of()).isEmpty());
-
-        Country noCapitalMatch = new Country();
-        noCapitalMatch.setCapital(-1);
-        noCapitalMatch.setCities(List.of());
-        assertTrue(task(List.of(noCapitalMatch)).isEmpty());
-
-        capitals.forEach(c -> System.out.println(c.getName() + " (id=" + c.getId() + ")"));
+        task(countries).stream().limit(20).forEach(IO::println);
     }
 }

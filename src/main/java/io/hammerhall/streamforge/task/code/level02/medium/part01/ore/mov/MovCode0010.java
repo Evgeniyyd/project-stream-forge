@@ -1,9 +1,5 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part01.ore.mov;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -33,15 +29,10 @@ public class MovCode0010 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovCode0010");
+
         Collection<Movie> movies = movies();
 
-        List<String> movieTitlesSortedByYearDesc = task(movies);
-
-        assertNotNull(movieTitlesSortedByYearDesc);
-        assertEquals(movies.size(), movieTitlesSortedByYearDesc.size());
-        assertTrue(movieTitlesSortedByYearDesc.stream()
-                .allMatch(title -> title != null && !title.isBlank()));
-
-        movieTitlesSortedByYearDesc.forEach(System.out::println);
+        task(movies).stream().limit(20).forEach(IO::println);
     }
 }

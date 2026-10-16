@@ -1,9 +1,5 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part02.anvil.wld;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.world.Country;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -41,26 +37,10 @@ public class WldCode0012 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit WldCode0012");
+
         Collection<Country> countries = countries();
 
-        List<Country> filtered = task(countries);
-
-        assertNotNull(filtered);
-
-        assertFalse(filtered.isEmpty());
-
-        assertTrue(filtered.size() <= countries.size());
-
-        assertTrue(countries.containsAll(filtered));
-
-        assertTrue(task(List.of()).isEmpty());
-
-        System.out.println("Отобрано стран: " + filtered.size());
-        filtered.forEach(country ->
-                System.out.printf("%s | нас.: %d | площ.: %s | конт.: %s%n",
-                        country.getName(),
-                        country.getPopulation(),
-                        country.getSurfaceArea(),
-                        country.getContinent()));
+        task(countries).stream().limit(20).forEach(IO::println);
     }
 }

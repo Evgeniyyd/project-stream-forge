@@ -1,10 +1,5 @@
 package io.hammerhall.streamforge.task.code.level02.medium.part03.steel.mov;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertInstanceOf;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import io.hammerhall.streamforge.domain.movie.Movie;
 import io.hammerhall.streamforge.task.Base;
 import java.util.Collection;
@@ -34,21 +29,12 @@ public class MovCode0029 extends Base {
 
     @Test
     void runTask() {
+        IO.println("Это вывод, а не проверка. Проверить решение: ./hammerhall submit MovCode0029");
+
         Collection<Movie> movies = movies();
 
-        TreeMap<Integer, List<String>> movieTitlesByYear = task(movies);
-
-        assertNotNull(movieTitlesByYear);
-        assertFalse(movieTitlesByYear.isEmpty());
-        assertInstanceOf(TreeMap.class, movieTitlesByYear);
-        assertTrue(movieTitlesByYear.keySet().stream()
-                .allMatch(year -> year != null && year > 0));
-
-        assertTrue(movieTitlesByYear.values().stream()
-                .flatMap(Collection::stream)
-                .allMatch(title -> title != null && !title.isBlank()));
-
-        movieTitlesByYear.forEach((year, movieTitles) ->
-                System.out.println(year + " : " + movieTitles));
+        task(movies).entrySet().stream()
+                .limit(20)
+                .forEach(entry -> IO.println(entry.getKey() + " — " + entry.getValue().size()));
     }
 }
