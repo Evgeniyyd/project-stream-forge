@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти столицу с наибольшей численностью населения на каждом континенте.")
+@DisplayName("Дипломатический бал")
 public class WldCode0054 extends Base {
 
     /**

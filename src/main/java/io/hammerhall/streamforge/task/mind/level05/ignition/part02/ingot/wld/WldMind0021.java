@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти страны, где самый большой город не является столицей")
+@DisplayName("Спор двух городов")
 public class WldMind0021 extends Base {
 
     /**

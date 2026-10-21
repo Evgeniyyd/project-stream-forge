@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Сопоставить странам их города-столицы.")
+@DisplayName("Конверты в посольства")
 public class WldCode0026 extends Base {
 
     /**

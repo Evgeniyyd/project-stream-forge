@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти все фильмы, у которых больше одного режиссёра.")
+@DisplayName("Спор в монтажной")
 public class MovCode0008 extends Base {
 
     /**

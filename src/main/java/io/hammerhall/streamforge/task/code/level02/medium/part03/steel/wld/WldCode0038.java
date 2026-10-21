@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Для каждого континента построить список стран с населением более 50 миллионов.")
+@DisplayName("Региональные саммиты")
 public class WldCode0038 extends Base {
 
     /**

@@ -7,7 +7,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Посчитать количество фильмов, вышедших в годы, которые не являются високосными.")
+@DisplayName("Календарь киномеханика")
 public class MovCode0004 extends Base {
 
     /**

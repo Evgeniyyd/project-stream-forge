@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить названия фильмов, отсортированные по году выхода от новых к старым.")
+@DisplayName("Афиша на стене фойе")
 public class MovCode0010 extends Base {
 
     /**

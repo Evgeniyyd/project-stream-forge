@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти страны, где население столицы составляет больше 30% населения страны")
+@DisplayName("Жалоба губернатора")
 public class WldMind0020 extends Base {
 
     /**

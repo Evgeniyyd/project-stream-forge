@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти наиболее представленного режиссёра и годы его активности.")
+@DisplayName("Чествование мастера")
 public class MovMind0027 extends Base {
 
     /**

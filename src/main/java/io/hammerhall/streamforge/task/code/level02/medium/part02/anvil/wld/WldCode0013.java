@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить список стран, отсортированный сначала по континенту, затем по названию.")
+@DisplayName("Стенд в школьном коридоре")
 public class WldCode0013 extends Base {
 
     /**

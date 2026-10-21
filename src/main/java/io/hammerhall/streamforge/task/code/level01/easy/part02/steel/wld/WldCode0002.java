@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить множество всех континентов.")
+@DisplayName("Атлас для первоклассника")
 public class WldCode0002 extends Base {
 
     /**

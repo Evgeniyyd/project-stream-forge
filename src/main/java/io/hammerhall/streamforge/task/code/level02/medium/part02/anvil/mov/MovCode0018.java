@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить последние N уникальных имён режиссёров, отсортированных по алфавиту.")
+@DisplayName("Визитница продюсера")
 public class MovCode0018 extends Base {
 
     /**

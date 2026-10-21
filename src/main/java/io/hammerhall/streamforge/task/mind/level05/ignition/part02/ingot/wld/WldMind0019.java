@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти страны, где сумма населения городов больше населения страны")
+@DisplayName("Ошибка переписчика")
 public class WldMind0019 extends Base {
 
     /**

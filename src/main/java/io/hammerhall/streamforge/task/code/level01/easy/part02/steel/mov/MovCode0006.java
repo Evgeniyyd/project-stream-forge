@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить список фильмов без рейтинга или с некорректным рейтингом.")
+@DisplayName("Беспокойный критик")
 public class MovCode0006 extends Base {
 
     /**

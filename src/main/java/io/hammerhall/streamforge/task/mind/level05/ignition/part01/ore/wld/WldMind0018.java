@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Построить последовательность роста населения.")
+@DisplayName("Записки демографа")
 public class WldMind0018 extends Base {
 
     /**

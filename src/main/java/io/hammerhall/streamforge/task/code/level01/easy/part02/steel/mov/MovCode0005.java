@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти первый фильм, вышедший после указанного года.")
+@DisplayName("Долгожданная премьера")
 public class MovCode0005 extends Base {
 
     /**

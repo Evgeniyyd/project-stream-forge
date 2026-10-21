@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить первые N фильмов из базы.")
+@DisplayName("Витрина видеосалона")
 public class MovCode0003 extends Base {
 
     /**

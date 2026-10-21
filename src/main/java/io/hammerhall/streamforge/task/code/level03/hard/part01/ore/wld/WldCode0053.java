@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти самый густонаселённый город на каждом континенте.")
+@DisplayName("Открытки туриста")
 public class WldCode0053 extends Base {
 
     /**

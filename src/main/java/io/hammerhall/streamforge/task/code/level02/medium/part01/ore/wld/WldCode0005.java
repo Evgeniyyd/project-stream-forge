@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить список всех городов мира.")
+@DisplayName("Справочник почтальона")
 public class WldCode0005 extends Base {
 
     /**

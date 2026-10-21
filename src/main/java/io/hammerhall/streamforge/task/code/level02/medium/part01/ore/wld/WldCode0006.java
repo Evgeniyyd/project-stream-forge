@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти страну с наибольшей площадью.")
+@DisplayName("Спор у глобуса")
 public class WldCode0006 extends Base {
 
     /**

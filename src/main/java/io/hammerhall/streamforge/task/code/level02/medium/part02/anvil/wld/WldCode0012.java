@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Отобрать страны по нескольким критериям одновременно.")
+@DisplayName("Анкета визового центра")
 public class WldCode0012 extends Base {
 
     /**

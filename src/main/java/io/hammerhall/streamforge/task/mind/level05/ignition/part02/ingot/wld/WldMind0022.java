@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти континент с максимальной плотностью населения")
+@DisplayName("Экспедиция картографа")
 public class WldMind0022 extends Base {
 
     /**

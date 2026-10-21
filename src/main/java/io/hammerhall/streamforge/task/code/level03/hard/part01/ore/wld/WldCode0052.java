@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти страну с максимальным количеством городов на каждом континенте.")
+@DisplayName("Гонка градостроителей")
 public class WldCode0052 extends Base {
 
     /**

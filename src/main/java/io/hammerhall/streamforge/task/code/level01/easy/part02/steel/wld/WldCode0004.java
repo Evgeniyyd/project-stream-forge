@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти страны без городов")
+@DisplayName("Карта первооткрывателя")
 public class WldCode0004 extends Base {
 
     /**

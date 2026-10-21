@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить список стран с населением более 50 миллионов человек.")
+@DisplayName("Заседание в Женеве")
 public class WldCode0001 extends Base {
 
     /**

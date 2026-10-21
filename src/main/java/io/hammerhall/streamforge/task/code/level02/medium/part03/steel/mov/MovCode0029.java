@@ -9,7 +9,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Сгруппировать фильмы по году и перечислить их названия.")
+@DisplayName("Подшивка киножурнала")
 public class MovCode0029 extends Base {
 
     /**

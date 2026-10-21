@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить «временной срез» базы — N самых ранних и N самых поздних фильмов.")
+@DisplayName("Юбилейный вечер киноклуба")
 public class MovMind0022 extends Base {
 
     /**

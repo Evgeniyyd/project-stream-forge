@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти все фильмы, у которых набор жанров строго равен набору: Drama и Comedy.")
+@DisplayName("Вечер в провинциальном театре")
 public class MovMind0006 extends Base {
 
     /**

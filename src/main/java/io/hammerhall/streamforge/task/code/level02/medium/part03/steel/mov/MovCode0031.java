@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Найти год, в котором вышло больше всего фильмов.")
+@DisplayName("Спор старых киноманов")
 public class MovCode0031 extends Base {
 
     /**

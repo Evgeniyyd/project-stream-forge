@@ -8,7 +8,7 @@ import lombok.NonNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Задание: Получить список названий всех уникальных жанров, отсортированный по алфавиту.")
+@DisplayName("Таблички на стеллажах")
 public class MovCode0017 extends Base {
 
     /**
